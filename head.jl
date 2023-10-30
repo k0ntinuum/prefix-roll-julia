@@ -1,4 +1,5 @@
 using Printf
+using Random
 
 const Word = Array{Int64}
 

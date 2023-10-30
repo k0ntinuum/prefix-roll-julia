@@ -5,7 +5,6 @@ end
 function roll_key(k :: Key, m :: Int64, a :: Int64)
     for i in eachindex(k)
         if k[i].mode == m
-            #@printf "found one \n"
             k[i] = rolled_response(k[i],a)
         end
     end

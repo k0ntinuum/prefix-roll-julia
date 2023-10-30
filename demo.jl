@@ -4,12 +4,15 @@ end
 
 function demo()
     print(k)
-    p = random_word(60)
-    print(p)
-    c = encode(p,k)
-    print(c)
-    d = decode(c,k)
-    print(d)
-    Base.print(p == d)
+    for i in 1:20
+        p = random_word(rand(2:13))
+        #print(p)
+        c = encrypt(p,k, rounds)
+        #print(c)
+        @printf("f %-20s = %-50s\n\n",as_string(p),as_string(c))
+        # d = decrypt(c,k, rounds)
+        # print(d)
+        # Base.print(p == d)
+    end
 end
 
