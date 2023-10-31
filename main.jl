@@ -1,5 +1,4 @@
 include("head.jl")
-include("settings.jl")
 include("roll.jl")
 include("prefix.jl")
 include("reads.jl")
@@ -13,11 +12,12 @@ include("print.jl")
 include("demo.jl")
 
 #alph = "abcdefghijklmnopqrstuvwxyz"
-#alph = "O|#@*"
+#alph = "_ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+alph = "O|#@*"
 # alph = "O|2345"
-alph = "O|@"
-num_words = length(alph) + 1
-max_length =3
+#alph = "O|@"
+num_words = 2*length(alph)
+max_length =2
 num_modes = 2 * length(alph)
 rounds = 4
 k = random_key(num_words,max_length,num_modes)

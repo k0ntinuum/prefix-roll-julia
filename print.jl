@@ -28,13 +28,15 @@ function print(v :: Word) Base.print(as_string(v) *"\n") end
 function print(r :: Response)
     hue = 155
     rgb(hue,hue,hue)
-    @printf("%d ", r.mode )
+    @printf("%3d ", r.mode )
     rgb(255,0,0)
-    @printf("%s ",as_string(r.reads))
-    rgb(255,255,0)
-    @printf("%s ",as_string(r.writes) )
+    @printf("%-3s",as_string(r.reads))
     rgb(hue,hue,hue)
-    @printf("%d\n", r.goes)
+    @printf(" =>  ")
+    rgb(255,255,0)
+    @printf("%-3s ",as_string(r.writes) )
+    rgb(hue,hue,hue)
+    @printf("%-3d\n", r.goes)
 end
 
 function print(k :: Key)
