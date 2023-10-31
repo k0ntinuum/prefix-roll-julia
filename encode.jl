@@ -6,9 +6,10 @@ function encode(p :: Word , q :: Key) :: Word
     while i <= length(p)
         for r in k
             if r.mode == m && prefix(r.reads,p[i:end])
+                roll = p[i]
                 c = vcat(c, r.writes)
                 i += length(r.reads)
-                roll_key(k,m,1)
+                roll_key(k,m,roll)
                 m = r.goes
                 @goto next_mode
             end

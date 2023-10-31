@@ -7,8 +7,9 @@ function decode(c :: Word , q :: Key) :: Word
         for r in k
             if r.mode == m && prefix(r.writes,c[i:end])
                 p = vcat(p, r.reads)
+                roll = r.reads[1]
                 i += length(r.writes)
-                roll_key(k,m,1)
+                roll_key(k,m,p[end])
                 m = r.goes
                 @goto next_mode
             end
