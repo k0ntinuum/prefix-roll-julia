@@ -17,7 +17,7 @@ include("demo.jl")
 # alph = "O|2345"
 alph = "O|@"
 num_words = length(alph) + 1
-max_length =2
+max_length =3
 num_modes = 2 * length(alph)
-rounds = 2
+rounds = 4
 k = random_key(num_words,max_length,num_modes)
